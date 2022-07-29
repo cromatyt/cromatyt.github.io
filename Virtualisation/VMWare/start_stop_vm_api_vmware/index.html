@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://cromatyt.github.io/Github/hugo_github/">
+        <link rel="canonical" href="https://cromatyt.github.io/Virtualisation/VMWare/start_stop_vm_api_vmware/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
-        <title>Deploy Hugo webpages on Github - MkPersonalDocs</title>
+        <title>Start/Stop VM via Api Vmware - MkPersonalDocs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -79,7 +79,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#prerequis" class="md-skip">
+        <a href="#presentation" class="md-skip">
           Aller au contenu
         </a>
       
@@ -126,7 +126,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../.." title="MkPersonalDocs" class="md-header__button md-logo" aria-label="MkPersonalDocs" data-md-component="logo">
+    <a href="../../.." title="MkPersonalDocs" class="md-header__button md-logo" aria-label="MkPersonalDocs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -145,7 +145,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deploy Hugo webpages on Github
+              Start/Stop VM via Api Vmware
             
           </span>
         </div>
@@ -246,7 +246,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="MkPersonalDocs" class="md-nav__button md-logo" aria-label="MkPersonalDocs" data-md-component="logo">
+    <a href="../../.." title="MkPersonalDocs" class="md-nav__button md-logo" aria-label="MkPersonalDocs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -277,7 +277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -318,7 +318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/disk/" class="md-nav__link">
+      <a href="../../../Linux/disk/" class="md-nav__link">
         Disk
       </a>
     </li>
@@ -332,7 +332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/network/" class="md-nav__link">
+      <a href="../../../Linux/network/" class="md-nav__link">
         Netowork
       </a>
     </li>
@@ -352,12 +352,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -378,12 +380,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
       
       
       
@@ -404,11 +408,80 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Virtualisation/VMWare/start_stop_vm_api_vmware/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Start/Stop VM via Api Vmware
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Start/Stop VM via Api Vmware
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequis" class="md-nav__link">
+    Prérequis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recupere-notre-tag" class="md-nav__link">
+    Récupéré notre tag
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajouter-un-tag-a-une-vm" class="md-nav__link">
+    Ajouter un tag à une VM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liste-des-vm-avec-le-nouveau-tag" class="md-nav__link">
+    Liste des VM avec le nouveau tag
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allumereteindre-les-vm-avec-le-tag" class="md-nav__link">
+    Allumer/Éteindre les VM avec le tag
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -453,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Virtualisation/Proxmox/prox_NFS/" class="md-nav__link">
+      <a href="../../Proxmox/prox_NFS/" class="md-nav__link">
         NFS
       </a>
     </li>
@@ -467,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Virtualisation/Proxmox/LXC_pihole/" class="md-nav__link">
+      <a href="../../Proxmox/LXC_pihole/" class="md-nav__link">
         PiHole
       </a>
     </li>
@@ -522,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Zabbix/zabbix_soft_discovery/" class="md-nav__link">
+      <a href="../../../Zabbix/zabbix_soft_discovery/" class="md-nav__link">
         Limit autodiscovery network calls
       </a>
     </li>
@@ -570,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Gitlab/config/" class="md-nav__link">
+      <a href="../../../Gitlab/config/" class="md-nav__link">
         Config
       </a>
     </li>
@@ -590,14 +663,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
@@ -618,14 +689,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
       
       
       
@@ -646,21 +715,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Github/hugo_github/" class="md-nav__link">
         goHugo
       </a>
-      
     </li>
   
 
@@ -672,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs/" class="md-nav__link">
+      <a href="../../../Github/mkdocs/" class="md-nav__link">
         mkdocs
       </a>
     </li>
@@ -701,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -716,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tags/" class="md-nav__link">
+      <a href="../../../tags/" class="md-nav__link">
         Tags
       </a>
     </li>
@@ -743,6 +802,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequis" class="md-nav__link">
+    Prérequis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recupere-notre-tag" class="md-nav__link">
+    Récupéré notre tag
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajouter-un-tag-a-une-vm" class="md-nav__link">
+    Ajouter un tag à une VM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liste-des-vm-avec-le-nouveau-tag" class="md-nav__link">
+    Liste des VM avec le nouveau tag
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allumereteindre-les-vm-avec-le-tag" class="md-nav__link">
+    Allumer/Éteindre les VM avec le tag
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -759,20 +861,14 @@
   <nav class="md-tags" >
     
       
-        <a href="../../tags/#gohugo" class="md-tag">
-          goHugo
+        <a href="../../../tags/#bash" class="md-tag">
+          Bash
         </a>
       
     
       
-        <a href="../../tags/#github" class="md-tag">
-          Github
-        </a>
-      
-    
-      
-        <a href="../../tags/#git" class="md-tag">
-          Git
+        <a href="../../../tags/#vmwmare" class="md-tag">
+          VMWmare
         </a>
       
     
@@ -780,59 +876,135 @@
 
 
 
-<h1 id="prerequis">Prérequis</h1>
-<ol>
-<li>Avoir un compte Github<blockquote>
-<p><a href="https://github.com/join">Création de compte github</a></p>
+<h1 id="presentation">Présentation</h1>
+<p>Dans l'optique d'optimiser les coups dans l'IT(Finops), on peut être amené à mettre en place un arrêt de l'environnement de qualifications les soirs et weekend par exemple.</p>
+<p>Afin de pouvoir vérifier directement la prise en compte de cette partie, on passera par l'affectation d'un tag spécifique pour l'ensemble des VM que je souhaites intégrer à ce système. Ils seront alors directement visible dans l'interface graphique de vmware.</p>
+<blockquote>
+<p>On partira du postula que l'ensemble des scripts comporte des variables user/password</p>
 </blockquote>
-</li>
-<li>Installer goHugo sur votre machine locale<blockquote>
-<p><a href="https://gohugo.io/getting-started/installing/">Installation Hugo</a></p>
-</blockquote>
-</li>
-</ol>
-<h1 id="mise-en-place">Mise en place</h1>
-<h2 id="creer-2-repo-github">Créer 2 repo github</h2>
+<div class="admonition warning">
+<p>Dans les morceaux de scripts ci-après, l'option curl <strong>k</strong> est présente car mon serveur VMware ne dispose pas de certificat valide</p>
+</div>
+<h2 id="prerequis">Prérequis</h2>
 <ol>
-<li>Stocker le code hugo (repo privé ou publique)</li>
-<li>Héberger les fichiers statiques (repo publique uniquement)
-{{&lt; alert warning &gt;}}
-Le nom du repo qui hébergera le site devra être sous la forme: <strong>myWebsiteName.github.io</strong> qui correspondra par la suite à l'url d'accès à votre site
-{{&lt; /alert &gt;}}</li>
+<li>Un utilisateur ou token avec les bons droits d'utilisation de l'api vmware</li>
+<li>Créer un nouveau tag vmware</li>
 </ol>
-<h2 id="recuperer-nos-repos-en-local">Récupérer nos repos en local</h2>
-<div class="highlight"><pre><span></span><code>git clone git@github.com:YourAccountName/YourRepoName.git
-git clone git@github.com:YourAccountName/myWebsiteName.github.io.git
+<h2 id="recupere-notre-tag">Récupéré notre tag</h2>
+<p>Une fois votre tag créé, il faut récupérer son ID.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">## URL de votre Vcenter</span>
+<span class="nv">vcenter</span><span class="o">=</span><span class="s1">&#39;XXXXX.XXXX.XX&#39;</span>
+
+<span class="c1">## Creation de votre session à l&#39;api Vmware</span>
+<span class="nv">id_session</span><span class="o">=</span><span class="k">$(</span>curl -skX POST https://<span class="nv">$vcenter</span>/rest/com/vmware/cis/session -u <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$user</span><span class="k">)</span>:<span class="k">$(</span><span class="nb">echo</span> <span class="nv">$password</span><span class="k">)</span> <span class="p">|</span> jq -r .value<span class="k">)</span>
+
+<span class="c1">## Liste des ID tags</span>
+<span class="nv">tags_id</span><span class="o">=</span><span class="k">$(</span>curl -skX GET -H <span class="s2">&quot;vmware-api-session-id: </span><span class="nv">$id_session</span><span class="s2">&quot;</span> -H <span class="s1">&#39;Accept: application/json&#39;</span> https://<span class="nv">$vcenter</span>/rest/com/vmware/cis/tagging/tag <span class="p">|</span> jq -r .value<span class="o">[]</span><span class="k">)</span>
+
+<span class="c1">## Liste des ID tags avec leur nom</span>
+<span class="c1">## Si le premier parametre du script est </span>
+<span class="c1">## - all =&gt; on affiche toute la liste</span>
+<span class="c1">## - le nom de notre nouveau tag =&gt; on affiche son ID</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span> <span class="o">]</span>
+<span class="k">then</span>
+  <span class="k">for</span> tag <span class="k">in</span> <span class="nv">$tags_id</span>
+  <span class="k">do</span>
+      curl -skX GET -H <span class="s2">&quot;vmware-api-session-id: </span><span class="nv">$id_session</span><span class="s2">&quot;</span> -H <span class="s1">&#39;Accept: application/json&#39;</span> https://<span class="nv">$vcenter</span>/rest/com/vmware/cis/tagging/tag/id:<span class="nv">$tag</span> <span class="p">|</span> jq -r <span class="s1">&#39;.value | &quot;tag_name: \(.name)\t\ttag_id: \(.id)&quot;&#39;</span>
+  <span class="k">done</span>
+<span class="k">elif</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span>
+<span class="k">then</span>
+  <span class="k">for</span> tag <span class="k">in</span> <span class="nv">$tags_id</span>
+  <span class="k">do</span>
+      curl -skX GET -H <span class="s2">&quot;vmware-api-session-id: </span><span class="nv">$id_session</span><span class="s2">&quot;</span> -H <span class="s1">&#39;Accept: application/json&#39;</span> https://<span class="nv">$vcenter</span>/rest/com/vmware/cis/tagging/tag/id:<span class="nv">$tag</span> <span class="p">|</span> jq -r <span class="s1">&#39;.value | &quot;tag_name: \(.name)\t\ttag_id: \(.id)&quot;&#39;</span> <span class="p">|</span> grep -E <span class="nv">$1</span>
+  <span class="k">done</span>
+<span class="k">fi</span>
+</code></pre></div>
+<h2 id="ajouter-un-tag-a-une-vm">Ajouter un tag à une VM</h2>
+<p>A partir d'ici, on mettra l'ID du nouveau tag dans les scripts. Il se présente sous la forme : <strong>urn:vmomi:InventoryServiceTag:XXXXX-XXXXX-XXXXX:GLOBAL</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">## URL de votre Vcenter</span>
+<span class="nv">vcenter</span><span class="o">=</span><span class="s1">&#39;XXXXX.XXXX.XX&#39;</span>
+
+<span class="c1">## Creation de votre session à l&#39;api Vmware</span>
+<span class="nv">id_session</span><span class="o">=</span><span class="k">$(</span>curl -skX POST https://<span class="nv">$vcenter</span>/rest/com/vmware/cis/session -u <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$user</span><span class="k">)</span>:<span class="k">$(</span><span class="nb">echo</span> <span class="nv">$password</span><span class="k">)</span> <span class="p">|</span> jq -r .value<span class="k">)</span>
+
+<span class="c1">## Utilisation de notre tag</span>
+<span class="nv">tag_id</span><span class="o">=</span><span class="s1">&#39;urn:vmomi:InventoryServiceTag:XXXXX-XXXXX-XXXXX:GLOBAL&#39;</span>
+
+<span class="c1">## Liste des VM à downscale à partie de leur nom</span>
+<span class="c1">## On utilisera le pipe comme délimiteur</span>
+<span class="nv">vm_a_tag</span><span class="o">=</span><span class="s2">&quot;vm1|vm2|vm3&quot;</span>
+
+<span class="c1">## Recuperation des ID de VM</span>
+<span class="nv">vm_name_id</span><span class="o">=</span><span class="k">$(</span>curl -skX GET -H <span class="s2">&quot;vmware-api-session-id: </span><span class="nv">$id_session</span><span class="s2">&quot;</span> -H <span class="s2">&quot;Accept: application/json&quot;</span> https://<span class="nv">$vcenter</span>/rest/vcenter/vm/ <span class="p">|</span> jq -r <span class="s1">&#39;.value[] | &quot;\(.name),\(.vm)&quot;&#39;</span> <span class="p">|</span> grep -E <span class="s2">&quot;</span><span class="nv">$vm_a_tag</span><span class="s2">&quot;</span><span class="k">)</span>
+
+<span class="c1">## Ajout du tag aux VM de la liste</span>
+<span class="k">for</span> vm <span class="k">in</span> <span class="nv">$vm_name_id</span>
+<span class="k">do</span>
+  <span class="nv">vm_id</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$vm</span> <span class="p">|</span> cut -d, -f2<span class="k">)</span><span class="s2">&quot;</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Ajout du tag à la VM </span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$vm</span> <span class="p">|</span> cut -d, -f1<span class="k">)</span><span class="s2">&quot;</span>
+  curl -skX POST -H <span class="s2">&quot;vmware-api-session-id: </span><span class="nv">$id_session</span><span class="s2">&quot;</span> -H <span class="s1">&#39;Content-Type: application/json&#39;</span> -d <span class="s1">&#39;{&quot;object_id&quot;: { &quot;id&quot;: &quot;&#39;</span><span class="nv">$vm_id</span><span class="s1">&#39;&quot;, &quot;type&quot;: &quot;VirtualMachine&quot;} }&#39;</span> https://<span class="nv">$vcenter</span>/rest/com/vmware/cis/tagging/tag-association/id:<span class="o">{</span><span class="nv">$tag_id</span><span class="o">}</span>?~action<span class="o">=</span>attach
+<span class="k">done</span>
 </code></pre></div>
 <blockquote>
-<p>vous pouvez aussi les récupérer via https mais les commandes <code>git push [...]</code> vous demanderont un token.</p>
+<p>pour retirer le tag d'une ou plusieurs VM, remplacer simplement <strong>attach</strong> par <strong>detach</strong> dans le script au dessus (dernier appel curl) et relancer le</p>
 </blockquote>
-<h2 id="creer-un-site-hugo">Créer un site Hugo</h2>
-<p>Dans votre repo contenant le code (YourRepoName.git)
-<div class="highlight"><pre><span></span><code>hugo new site myWebsiteName
-</code></pre></div></p>
-<h2 id="theme-hugo">Theme hugo</h2>
-<p>Pour plus de facilité et de rapidité, je vous conseille d'utiliser un thème maintenu par la communauté.</p>
-<p>Référez vous à la documentation du theme que vous souhaitez utiliser : <a href="https://themes.gohugo.io/">themes</a></p>
-<h2 id="git-submodule">Git submodule</h2>
-<p>En locale, dans le répertoire principale du site hugo (myWebsiteName)
-<div class="highlight"><pre><span></span><code>git submodule add -b main https://github.com/YourAccountName/myWebsiteName.github.io.git public
+<h2 id="liste-des-vm-avec-le-nouveau-tag">Liste des VM avec le nouveau tag</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">## URL de votre Vcenter</span>
+<span class="nv">vcenter</span><span class="o">=</span><span class="s1">&#39;XXXXX.XXXX.XX&#39;</span>
+
+<span class="c1">## Creation de votre session à l&#39;api Vmware</span>
+<span class="nv">id_session</span><span class="o">=</span><span class="k">$(</span>curl -skX POST https://<span class="nv">$vcenter</span>/rest/com/vmware/cis/session -u <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$user</span><span class="k">)</span>:<span class="k">$(</span><span class="nb">echo</span> <span class="nv">$password</span><span class="k">)</span> <span class="p">|</span> jq -r .value<span class="k">)</span>
+
+<span class="c1">## Utilisation de notre tag</span>
+<span class="nv">tag_id</span><span class="o">=</span><span class="s1">&#39;urn:vmomi:InventoryServiceTag:XXXXX-XXXXX-XXXXX:GLOBAL&#39;</span>
+
+<span class="c1">## Liste des ID des VM avec notre tag</span>
+<span class="nv">vm_tagged</span><span class="o">=</span><span class="k">$(</span>curl -skX POST -H <span class="s2">&quot;vmware-api-session-id: </span><span class="nv">$id_session</span><span class="s2">&quot;</span> -H <span class="s1">&#39;Content-Type: application/json&#39;</span> -d <span class="s1">&#39;{&quot;tag_ids&quot;: [&quot;&#39;</span><span class="nv">$tag_id</span><span class="s1">&#39;&quot;]}&#39;</span> https://<span class="nv">$vcenter</span>/rest/com/vmware/cis/tagging/tag-association?~action<span class="o">=</span>list-attached-objects-on-tags <span class="p">|</span> jq -r .value<span class="o">[]</span>.object_ids<span class="o">[]</span>.id<span class="k">)</span>
+
+<span class="c1">## Liste des nom des VM avec notre tag</span>
+<span class="k">for</span> id_vm <span class="k">in</span> <span class="nv">$vm_tagged</span>
+<span class="k">do</span>
+  <span class="nv">vm_name</span><span class="o">=</span><span class="k">$(</span>curl -skX GET -H <span class="s2">&quot;vmware-api-session-id: </span><span class="nv">$id_session</span><span class="s2">&quot;</span> -H <span class="s2">&quot;Accept: application/json&quot;</span> https://<span class="nv">$vcenter</span>/rest/vcenter/vm/<span class="nv">$id_vm</span> <span class="p">|</span> jq -r .value.name<span class="k">)</span>
+  <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$vm_name</span><span class="s2"> (</span><span class="nv">$id_vm</span><span class="s2">)&quot;</span>
+<span class="k">done</span>
 </code></pre></div>
-Un répertoire nommé public va être créé, tel un lien symbolique vers le repo qui hébergera vos fichiers statiques (myWebsiteName.github.io.git).</p>
-<h2 id="generer-les-fichiers-statiques-hugo">Générer les fichiers statiques Hugo</h2>
-<p>Dans le répertoire principe du site hugo (myWebsiteName)
-<div class="highlight"><pre><span></span><code>hugo -t themeName
+<h2 id="allumereteindre-les-vm-avec-le-tag">Allumer/Éteindre les VM avec le tag</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">## URL de votre Vcenter</span>
+<span class="nv">vcenter</span><span class="o">=</span><span class="s1">&#39;XXXXX.XXXX.XX&#39;</span>
+
+<span class="c1">## Creation de votre session à l&#39;api Vmware</span>
+<span class="nv">id_session</span><span class="o">=</span><span class="k">$(</span>curl -skX POST https://<span class="nv">$vcenter</span>/rest/com/vmware/cis/session -u <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$user</span><span class="k">)</span>:<span class="k">$(</span><span class="nb">echo</span> <span class="nv">$password</span><span class="k">)</span> <span class="p">|</span> jq -r .value<span class="k">)</span>
+
+<span class="c1">## Utilisation de notre tag</span>
+<span class="nv">tag_id</span><span class="o">=</span><span class="s1">&#39;urn:vmomi:InventoryServiceTag:XXXXX-XXXXX-XXXXX:GLOBAL&#39;</span>
+
+<span class="c1">## Liste des ID des VM avec notre tag</span>
+<span class="nv">vm_tagged</span><span class="o">=</span><span class="k">$(</span>curl -skX POST -H <span class="s2">&quot;vmware-api-session-id: </span><span class="nv">$id_session</span><span class="s2">&quot;</span> -H <span class="s1">&#39;Content-Type: application/json&#39;</span> -d <span class="s1">&#39;{&quot;tag_ids&quot;: [&quot;&#39;</span><span class="nv">$tag_id</span><span class="s1">&#39;&quot;]}&#39;</span> https://<span class="nv">$vcenter</span>/rest/com/vmware/cis/tagging/tag-association?~action<span class="o">=</span>list-attached-objects-on-tags <span class="p">|</span> jq -r .value<span class="o">[]</span>.object_ids<span class="o">[]</span>.id<span class="k">)</span>
+
+<span class="c1">## Si le premier parametre du script est </span>
+<span class="c1">## - stop =&gt; on eteint la VM</span>
+<span class="c1">## - start =&gt; on allume la VM</span>
+<span class="k">for</span> id_vm <span class="k">in</span> <span class="nv">$vm_tagged</span>
+<span class="k">do</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$1</span> <span class="o">==</span> <span class="s2">&quot;stop&quot;</span> <span class="o">]]</span>
+    <span class="k">then</span>
+        curl -skX POST -H <span class="s2">&quot;vmware-api-session-id: </span><span class="nv">$id_session</span><span class="s2">&quot;</span> -H <span class="s2">&quot;Accept: application/json&quot;</span> https://<span class="nv">$vcenterr</span>/rest/vcenter/vm/<span class="nv">$id_vm</span>/power/stop
+    <span class="k">fi</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$1</span> <span class="o">==</span> <span class="s2">&quot;upscale&quot;</span> <span class="o">]]</span>
+    <span class="k">then</span>
+        curl -skX POST -H <span class="s2">&quot;vmware-api-session-id: </span><span class="nv">$id_session</span><span class="s2">&quot;</span> -H <span class="s2">&quot;Accept: application/json&quot;</span> https://<span class="nv">$vcenter</span>/rest/vcenter/vm/<span class="nv">$id_vm</span>/power/start
+    <span class="k">fi</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]]</span>
+    <span class="k">then</span>
+        <span class="nb">echo</span> <span class="s2">&quot;Error&quot;</span>
+    <span class="k">fi</span>
+<span class="k">done</span>
 </code></pre></div>
-Les fichiers statiques sont ainsi créés dans notre répertoire public.</p>
-<h2 id="deployer-son-site">Deployer son site</h2>
-<p>Une fois dans le répertoire public
-<div class="highlight"><pre><span></span><code>git add .
-git commit -m <span class="s2">&quot;some commit message&quot;</span>
-git push origin main
-</code></pre></div>
-Après environ 2 minutes (temps de déploiement github variable et consultable via l'url github.com/YourAccountName/myWebsiteName.github.io/deployments/), le site sera maintenant être accessible via l'url <strong>myWebsiteName.github.io</strong></p>
-<h2 id="sauvegarder-le-reste-de-son-code">Sauvegarder le reste de son code</h2>
-<p>Dans le répertoire principe du site hugo (myWebsiteName), pousser les modifications comme lors de l'étape précédente</p>
+<p>Une fois créé et testé, ce script peux être mis dans une crontab ou systemd-timer</p>
+<blockquote>
+<p>Plus de détails <a href="https://developer.vmware.com/apis/vsphere-automation/latest/">developer.vmware.com</a></p>
+</blockquote>
 
   <hr>
 <div class="md-source-file">
@@ -868,7 +1040,7 @@ Après environ 2 minutes (temps de déploiement github variable et consultable v
     <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
       
         
-        <a href="../../Gitlab/config/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Config" rel="prev">
+        <a href="../../../Linux/network/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Netowork" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -877,20 +1049,20 @@ Après environ 2 minutes (temps de déploiement github variable et consultable v
               <span class="md-footer__direction">
                 Précédent
               </span>
-              Config
+              Netowork
             </div>
           </div>
         </a>
       
       
         
-        <a href="../mkdocs/" class="md-footer__link md-footer__link--next" aria-label="Suivant: mkdocs" rel="next">
+        <a href="../../Proxmox/prox_NFS/" class="md-footer__link md-footer__link--next" aria-label="Suivant: NFS" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              mkdocs
+              NFS
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -919,10 +1091,10 @@ Après environ 2 minutes (temps de déploiement github variable et consultable v
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
     
   </body>

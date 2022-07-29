@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://cromatyt.github.io/Github/hugo_github/">
+        <link rel="canonical" href="https://cromatyt.github.io/Virtualisation/Proxmox/LXC_pihole/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
-        <title>Deploy Hugo webpages on Github - MkPersonalDocs</title>
+        <title>Proxmox NFS - MkPersonalDocs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -79,7 +79,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#prerequis" class="md-skip">
+        <a href="#pihole" class="md-skip">
           Aller au contenu
         </a>
       
@@ -126,7 +126,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../.." title="MkPersonalDocs" class="md-header__button md-logo" aria-label="MkPersonalDocs" data-md-component="logo">
+    <a href="../../.." title="MkPersonalDocs" class="md-header__button md-logo" aria-label="MkPersonalDocs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -145,7 +145,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deploy Hugo webpages on Github
+              Proxmox NFS
             
           </span>
         </div>
@@ -246,7 +246,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="MkPersonalDocs" class="md-nav__button md-logo" aria-label="MkPersonalDocs" data-md-component="logo">
+    <a href="../../.." title="MkPersonalDocs" class="md-nav__button md-logo" aria-label="MkPersonalDocs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -277,7 +277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -318,7 +318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/disk/" class="md-nav__link">
+      <a href="../../../Linux/disk/" class="md-nav__link">
         Disk
       </a>
     </li>
@@ -332,7 +332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/network/" class="md-nav__link">
+      <a href="../../../Linux/network/" class="md-nav__link">
         Netowork
       </a>
     </li>
@@ -352,12 +352,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -406,7 +408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Virtualisation/VMWare/start_stop_vm_api_vmware/" class="md-nav__link">
+      <a href="../../VMWare/start_stop_vm_api_vmware/" class="md-nav__link">
         Start/Stop VM via Api Vmware
       </a>
     </li>
@@ -425,12 +427,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
       
       
       
@@ -453,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Virtualisation/Proxmox/prox_NFS/" class="md-nav__link">
+      <a href="../prox_NFS/" class="md-nav__link">
         NFS
       </a>
     </li>
@@ -465,11 +469,101 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Virtualisation/Proxmox/LXC_pihole/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          PiHole
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         PiHole
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-ubuntu-lxc-on-proxmox" class="md-nav__link">
+    Create an ubuntu LXC on proxmox
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-new-usergroup-on-lxc" class="md-nav__link">
+    Create new USER/GROUP on LXC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-ssh-key-on-your-local-device" class="md-nav__link">
+    Create a new ssh key on your local device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-your-new-public-key-to-lxc" class="md-nav__link">
+    Import your new public key to LXC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-ssh-on-lxc" class="md-nav__link">
+    Configure SSH on LXC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-your-tz" class="md-nav__link">
+    Set your tz
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-pihole" class="md-nav__link">
+    Install pihole
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-blocklist" class="md-nav__link">
+    ADD blocklist
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -522,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Zabbix/zabbix_soft_discovery/" class="md-nav__link">
+      <a href="../../../Zabbix/zabbix_soft_discovery/" class="md-nav__link">
         Limit autodiscovery network calls
       </a>
     </li>
@@ -570,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Gitlab/config/" class="md-nav__link">
+      <a href="../../../Gitlab/config/" class="md-nav__link">
         Config
       </a>
     </li>
@@ -590,14 +684,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
@@ -618,14 +710,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
       
       
       
@@ -646,21 +736,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Github/hugo_github/" class="md-nav__link">
         goHugo
       </a>
-      
     </li>
   
 
@@ -672,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs/" class="md-nav__link">
+      <a href="../../../Github/mkdocs/" class="md-nav__link">
         mkdocs
       </a>
     </li>
@@ -701,7 +781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -716,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tags/" class="md-nav__link">
+      <a href="../../../tags/" class="md-nav__link">
         Tags
       </a>
     </li>
@@ -743,6 +823,70 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-ubuntu-lxc-on-proxmox" class="md-nav__link">
+    Create an ubuntu LXC on proxmox
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-new-usergroup-on-lxc" class="md-nav__link">
+    Create new USER/GROUP on LXC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-ssh-key-on-your-local-device" class="md-nav__link">
+    Create a new ssh key on your local device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-your-new-public-key-to-lxc" class="md-nav__link">
+    Import your new public key to LXC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-ssh-on-lxc" class="md-nav__link">
+    Configure SSH on LXC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-your-tz" class="md-nav__link">
+    Set your tz
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-pihole" class="md-nav__link">
+    Install pihole
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-blocklist" class="md-nav__link">
+    ADD blocklist
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -759,20 +903,20 @@
   <nav class="md-tags" >
     
       
-        <a href="../../tags/#gohugo" class="md-tag">
-          goHugo
+        <a href="../../../tags/#proxmox" class="md-tag">
+          Proxmox
         </a>
       
     
       
-        <a href="../../tags/#github" class="md-tag">
-          Github
+        <a href="../../../tags/#lxc" class="md-tag">
+          LXC
         </a>
       
     
       
-        <a href="../../tags/#git" class="md-tag">
-          Git
+        <a href="../../../tags/#pihole" class="md-tag">
+          PiHole
         </a>
       
     
@@ -780,59 +924,74 @@
 
 
 
-<h1 id="prerequis">Prérequis</h1>
+<h1 id="pihole">PiHole</h1>
+<h3 id="create-an-ubuntu-lxc-on-proxmox">Create an ubuntu LXC on proxmox</h3>
 <ol>
-<li>Avoir un compte Github<blockquote>
-<p><a href="https://github.com/join">Création de compte github</a></p>
-</blockquote>
-</li>
-<li>Installer goHugo sur votre machine locale<blockquote>
-<p><a href="https://gohugo.io/getting-started/installing/">Installation Hugo</a></p>
-</blockquote>
-</li>
+<li>4 Go DD</li>
+<li>512 Mb RAM</li>
+<li>1 VCP</li>
+<li>unprivileged</li>
+<li>start on boot</li>
+<li>Update/Upgrade LXC system</li>
 </ol>
-<h1 id="mise-en-place">Mise en place</h1>
-<h2 id="creer-2-repo-github">Créer 2 repo github</h2>
-<ol>
-<li>Stocker le code hugo (repo privé ou publique)</li>
-<li>Héberger les fichiers statiques (repo publique uniquement)
-{{&lt; alert warning &gt;}}
-Le nom du repo qui hébergera le site devra être sous la forme: <strong>myWebsiteName.github.io</strong> qui correspondra par la suite à l'url d'accès à votre site
-{{&lt; /alert &gt;}}</li>
-</ol>
-<h2 id="recuperer-nos-repos-en-local">Récupérer nos repos en local</h2>
-<div class="highlight"><pre><span></span><code>git clone git@github.com:YourAccountName/YourRepoName.git
-git clone git@github.com:YourAccountName/myWebsiteName.github.io.git
+<h3 id="create-new-usergroup-on-lxc">Create new USER/GROUP on LXC</h3>
+<div class="highlight"><pre><span></span><code>adduser piholeadmin
+usermod -aG sudo piholeadmin
 </code></pre></div>
-<blockquote>
-<p>vous pouvez aussi les récupérer via https mais les commandes <code>git push [...]</code> vous demanderont un token.</p>
-</blockquote>
-<h2 id="creer-un-site-hugo">Créer un site Hugo</h2>
-<p>Dans votre repo contenant le code (YourRepoName.git)
-<div class="highlight"><pre><span></span><code>hugo new site myWebsiteName
+<h3 id="create-a-new-ssh-key-on-your-local-device">Create a new ssh key on your local device</h3>
+<div class="highlight"><pre><span></span><code>ssh-keygen -t ed25519
+</code></pre></div>
+<h3 id="import-your-new-public-key-to-lxc">Import your new public key to LXC</h3>
+<p>Copy your public key to the LXC (you can't use ssh-copy-id piholeadmin@X.X.X.X here)
+On your LXC machine create a authorized_keys in your piholeadmin home PATH</p>
+<div class="highlight"><pre><span></span><code>su piholeadmin
+<span class="nb">cd</span> ~
+mkdir ~/.ssh
+touch ~/.ssh/authorized_keys
+sudo chmod <span class="m">700</span> ~/.ssh
+sudo chmod <span class="m">600</span> ~/.ssh/authorized_keys
+</code></pre></div>
+<p>Then print the content of your local file ~/.ssh/id_ed25519.pub to ~/.ssh/authorized_keys on your LXC</p>
+<h3 id="configure-ssh-on-lxc">Configure SSH on LXC</h3>
+<p>Basique conf of /etc/ssh/sshd_config (replace port and allowusers): </p>
+<div class="highlight"><pre><span></span><code>Include /etc/ssh/sshd_config.d/*.conf
+
+Port XXXX
+
+PermitRootLogin no
+PasswordAuthentication no
+PermitEmptyPasswords no
+
+AllowUsers USER@X.X.X.*
+
+KbdInteractiveAuthentication no
+UsePAM yes
+X11Forwarding yes
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem       sftp    /usr/lib/openssh/sftp-server
+</code></pre></div>
+<p>Restart your SSH service
+<div class="highlight"><pre><span></span><code>service ssh restart
 </code></pre></div></p>
-<h2 id="theme-hugo">Theme hugo</h2>
-<p>Pour plus de facilité et de rapidité, je vous conseille d'utiliser un thème maintenu par la communauté.</p>
-<p>Référez vous à la documentation du theme que vous souhaitez utiliser : <a href="https://themes.gohugo.io/">themes</a></p>
-<h2 id="git-submodule">Git submodule</h2>
-<p>En locale, dans le répertoire principale du site hugo (myWebsiteName)
-<div class="highlight"><pre><span></span><code>git submodule add -b main https://github.com/YourAccountName/myWebsiteName.github.io.git public
+<p>Now you can connect your LXC with your piholeadmin user and your ssh key
+<div class="highlight"><pre><span></span><code>ssh -i ~.ssh/id_ed25519 -p <span class="o">{</span>SSH pihoel port<span class="o">}</span> piholeadmin@<span class="o">{</span>pihole IP<span class="o">}</span>
+</code></pre></div></p>
+<h3 id="set-your-tz">Set your tz</h3>
+<div class="highlight"><pre><span></span><code>timedatectl set-timezone Europe/Paris
 </code></pre></div>
-Un répertoire nommé public va être créé, tel un lien symbolique vers le repo qui hébergera vos fichiers statiques (myWebsiteName.github.io.git).</p>
-<h2 id="generer-les-fichiers-statiques-hugo">Générer les fichiers statiques Hugo</h2>
-<p>Dans le répertoire principe du site hugo (myWebsiteName)
-<div class="highlight"><pre><span></span><code>hugo -t themeName
+<h3 id="install-pihole">Install pihole</h3>
+<div class="highlight"><pre><span></span><code>apt install curl -y
+curl -sSL https://install.pi-hole.net <span class="p">|</span> bash
 </code></pre></div>
-Les fichiers statiques sont ainsi créés dans notre répertoire public.</p>
-<h2 id="deployer-son-site">Deployer son site</h2>
-<p>Une fois dans le répertoire public
-<div class="highlight"><pre><span></span><code>git add .
-git commit -m <span class="s2">&quot;some commit message&quot;</span>
-git push origin main
-</code></pre></div>
-Après environ 2 minutes (temps de déploiement github variable et consultable via l'url github.com/YourAccountName/myWebsiteName.github.io/deployments/), le site sera maintenant être accessible via l'url <strong>myWebsiteName.github.io</strong></p>
-<h2 id="sauvegarder-le-reste-de-son-code">Sauvegarder le reste de son code</h2>
-<p>Dans le répertoire principe du site hugo (myWebsiteName), pousser les modifications comme lors de l'étape précédente</p>
+<p>Change pihole password
+<div class="highlight"><pre><span></span><code>pihole -a -p
+</code></pre></div></p>
+<h3 id="add-blocklist">ADD blocklist</h3>
+<p>On pi-hole dashboard, go to "Group Management &gt; ADlists" and paste your links (can paste multiple at once)
+- https://firebog.net/
+- https://github.com/StevenBlack/hosts</p>
+<p>Reload your conf in "tools &gt; Update Gravity"</p>
 
   <hr>
 <div class="md-source-file">
@@ -843,7 +1002,7 @@ Après environ 2 minutes (temps de déploiement github variable et consultable v
       
         <br>
         Créé:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 27, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2022</span>
       
     
   </small>
@@ -868,7 +1027,7 @@ Après environ 2 minutes (temps de déploiement github variable et consultable v
     <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
       
         
-        <a href="../../Gitlab/config/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Config" rel="prev">
+        <a href="../prox_NFS/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: NFS" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -877,20 +1036,20 @@ Après environ 2 minutes (temps de déploiement github variable et consultable v
               <span class="md-footer__direction">
                 Précédent
               </span>
-              Config
+              NFS
             </div>
           </div>
         </a>
       
       
         
-        <a href="../mkdocs/" class="md-footer__link md-footer__link--next" aria-label="Suivant: mkdocs" rel="next">
+        <a href="../../../Zabbix/zabbix_soft_discovery/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Limit autodiscovery network calls" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              mkdocs
+              Limit autodiscovery network calls
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -919,10 +1078,10 @@ Après environ 2 minutes (temps de déploiement github variable et consultable v
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
     
   </body>

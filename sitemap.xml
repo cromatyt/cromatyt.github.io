@@ -2,32 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://cromatyt.github.io/</loc>
-         <lastmod>2022-07-27</lastmod>
+         <lastmod>2022-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cromatyt.github.io/about/</loc>
+         <lastmod>2022-07-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cromatyt.github.io/tags/</loc>
-         <lastmod>2022-07-27</lastmod>
+         <lastmod>2022-07-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cromatyt.github.io/Github/hugo_github/</loc>
-         <lastmod>2022-07-27</lastmod>
+         <lastmod>2022-07-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://cromatyt.github.io/Virtualisation/start_stop_vm_api_vmware/</loc>
-         <lastmod>2022-07-27</lastmod>
+         <loc>https://cromatyt.github.io/Github/mkdocs/</loc>
+         <lastmod>2022-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cromatyt.github.io/Gitlab/config/</loc>
+         <lastmod>2022-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cromatyt.github.io/Linux/disk/</loc>
+         <lastmod>2022-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cromatyt.github.io/Linux/network/</loc>
+         <lastmod>2022-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cromatyt.github.io/Virtualisation/Proxmox/LXC_pihole/</loc>
+         <lastmod>2022-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cromatyt.github.io/Virtualisation/Proxmox/prox_NFS/</loc>
+         <lastmod>2022-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cromatyt.github.io/Virtualisation/VMWare/start_stop_vm_api_vmware/</loc>
+         <lastmod>2022-07-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cromatyt.github.io/Zabbix/zabbix_soft_discovery/</loc>
-         <lastmod>2022-07-27</lastmod>
+         <lastmod>2022-07-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cromatyt.github.io/tags/</loc>
-         <lastmod>2022-07-27</lastmod>
+         <lastmod>2022-07-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

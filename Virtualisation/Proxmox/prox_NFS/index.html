@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://cromatyt.github.io/Github/hugo_github/">
+        <link rel="canonical" href="https://cromatyt.github.io/Virtualisation/Proxmox/prox_NFS/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
-        <title>Deploy Hugo webpages on Github - MkPersonalDocs</title>
+        <title>Proxmox NFS - MkPersonalDocs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -79,7 +79,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#prerequis" class="md-skip">
+        <a href="#proxmox-nfs" class="md-skip">
           Aller au contenu
         </a>
       
@@ -126,7 +126,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../.." title="MkPersonalDocs" class="md-header__button md-logo" aria-label="MkPersonalDocs" data-md-component="logo">
+    <a href="../../.." title="MkPersonalDocs" class="md-header__button md-logo" aria-label="MkPersonalDocs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -145,7 +145,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deploy Hugo webpages on Github
+              Proxmox NFS
             
           </span>
         </div>
@@ -246,7 +246,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="MkPersonalDocs" class="md-nav__button md-logo" aria-label="MkPersonalDocs" data-md-component="logo">
+    <a href="../../.." title="MkPersonalDocs" class="md-nav__button md-logo" aria-label="MkPersonalDocs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -277,7 +277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -318,7 +318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/disk/" class="md-nav__link">
+      <a href="../../../Linux/disk/" class="md-nav__link">
         Disk
       </a>
     </li>
@@ -332,7 +332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/network/" class="md-nav__link">
+      <a href="../../../Linux/network/" class="md-nav__link">
         Netowork
       </a>
     </li>
@@ -352,12 +352,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -406,7 +408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Virtualisation/VMWare/start_stop_vm_api_vmware/" class="md-nav__link">
+      <a href="../../VMWare/start_stop_vm_api_vmware/" class="md-nav__link">
         Start/Stop VM via Api Vmware
       </a>
     </li>
@@ -425,12 +427,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
       
       
       
@@ -451,11 +455,80 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Virtualisation/Proxmox/prox_NFS/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          NFS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         NFS
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    Context
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mise-ne-place-zfs" class="md-nav__link">
+    Mise ne place ZFS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confire-nfs-serveur-service" class="md-nav__link">
+    Confire NFS serveur service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confire-nfs-client-service" class="md-nav__link">
+    Confire NFS client service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-proxmox-cluster-directory" class="md-nav__link">
+    Create proxmox cluster directory
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -467,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Virtualisation/Proxmox/LXC_pihole/" class="md-nav__link">
+      <a href="../LXC_pihole/" class="md-nav__link">
         PiHole
       </a>
     </li>
@@ -522,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Zabbix/zabbix_soft_discovery/" class="md-nav__link">
+      <a href="../../../Zabbix/zabbix_soft_discovery/" class="md-nav__link">
         Limit autodiscovery network calls
       </a>
     </li>
@@ -570,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Gitlab/config/" class="md-nav__link">
+      <a href="../../../Gitlab/config/" class="md-nav__link">
         Config
       </a>
     </li>
@@ -590,14 +663,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
@@ -618,14 +689,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
       
       
       
@@ -646,21 +715,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Github/hugo_github/" class="md-nav__link">
         goHugo
       </a>
-      
     </li>
   
 
@@ -672,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs/" class="md-nav__link">
+      <a href="../../../Github/mkdocs/" class="md-nav__link">
         mkdocs
       </a>
     </li>
@@ -701,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -716,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tags/" class="md-nav__link">
+      <a href="../../../tags/" class="md-nav__link">
         Tags
       </a>
     </li>
@@ -743,6 +802,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    Context
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mise-ne-place-zfs" class="md-nav__link">
+    Mise ne place ZFS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confire-nfs-serveur-service" class="md-nav__link">
+    Confire NFS serveur service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confire-nfs-client-service" class="md-nav__link">
+    Confire NFS client service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-proxmox-cluster-directory" class="md-nav__link">
+    Create proxmox cluster directory
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -759,20 +861,20 @@
   <nav class="md-tags" >
     
       
-        <a href="../../tags/#gohugo" class="md-tag">
-          goHugo
+        <a href="../../../tags/#linux" class="md-tag">
+          Linux
         </a>
       
     
       
-        <a href="../../tags/#github" class="md-tag">
-          Github
+        <a href="../../../tags/#proxmox" class="md-tag">
+          Proxmox
         </a>
       
     
       
-        <a href="../../tags/#git" class="md-tag">
-          Git
+        <a href="../../../tags/#nfs" class="md-tag">
+          NFS
         </a>
       
     
@@ -780,59 +882,106 @@
 
 
 
-<h1 id="prerequis">Prérequis</h1>
-<ol>
-<li>Avoir un compte Github<blockquote>
-<p><a href="https://github.com/join">Création de compte github</a></p>
-</blockquote>
-</li>
-<li>Installer goHugo sur votre machine locale<blockquote>
-<p><a href="https://gohugo.io/getting-started/installing/">Installation Hugo</a></p>
-</blockquote>
-</li>
-</ol>
-<h1 id="mise-en-place">Mise en place</h1>
-<h2 id="creer-2-repo-github">Créer 2 repo github</h2>
-<ol>
-<li>Stocker le code hugo (repo privé ou publique)</li>
-<li>Héberger les fichiers statiques (repo publique uniquement)
-{{&lt; alert warning &gt;}}
-Le nom du repo qui hébergera le site devra être sous la forme: <strong>myWebsiteName.github.io</strong> qui correspondra par la suite à l'url d'accès à votre site
-{{&lt; /alert &gt;}}</li>
-</ol>
-<h2 id="recuperer-nos-repos-en-local">Récupérer nos repos en local</h2>
-<div class="highlight"><pre><span></span><code>git clone git@github.com:YourAccountName/YourRepoName.git
-git clone git@github.com:YourAccountName/myWebsiteName.github.io.git
-</code></pre></div>
+<h1 id="proxmox-nfs">Proxmox NFS</h1>
+<h4 id="context">Context</h4>
+<p>Dans un cluster de X nodes, 1 seul de ces nodes comporte un datastore</p>
+<h4 id="mise-ne-place-zfs">Mise ne place ZFS</h4>
+<p>Sur le noeud hebergeant le datastore, nous créons un raid ZFS via proxmox
+Dashboard &gt; node_name &gt; Disks &gt; ZFS</p>
 <blockquote>
-<p>vous pouvez aussi les récupérer via https mais les commandes <code>git push [...]</code> vous demanderont un token.</p>
+<p>Ici notre ZFS sera nommé <strong>Storage</strong></p>
 </blockquote>
-<h2 id="creer-un-site-hugo">Créer un site Hugo</h2>
-<p>Dans votre repo contenant le code (YourRepoName.git)
-<div class="highlight"><pre><span></span><code>hugo new site myWebsiteName
-</code></pre></div></p>
-<h2 id="theme-hugo">Theme hugo</h2>
-<p>Pour plus de facilité et de rapidité, je vous conseille d'utiliser un thème maintenu par la communauté.</p>
-<p>Référez vous à la documentation du theme que vous souhaitez utiliser : <a href="https://themes.gohugo.io/">themes</a></p>
-<h2 id="git-submodule">Git submodule</h2>
-<p>En locale, dans le répertoire principale du site hugo (myWebsiteName)
-<div class="highlight"><pre><span></span><code>git submodule add -b main https://github.com/YourAccountName/myWebsiteName.github.io.git public
-</code></pre></div>
-Un répertoire nommé public va être créé, tel un lien symbolique vers le repo qui hébergera vos fichiers statiques (myWebsiteName.github.io.git).</p>
-<h2 id="generer-les-fichiers-statiques-hugo">Générer les fichiers statiques Hugo</h2>
-<p>Dans le répertoire principe du site hugo (myWebsiteName)
-<div class="highlight"><pre><span></span><code>hugo -t themeName
-</code></pre></div>
-Les fichiers statiques sont ainsi créés dans notre répertoire public.</p>
-<h2 id="deployer-son-site">Deployer son site</h2>
-<p>Une fois dans le répertoire public
-<div class="highlight"><pre><span></span><code>git add .
-git commit -m <span class="s2">&quot;some commit message&quot;</span>
-git push origin main
-</code></pre></div>
-Après environ 2 minutes (temps de déploiement github variable et consultable via l'url github.com/YourAccountName/myWebsiteName.github.io/deployments/), le site sera maintenant être accessible via l'url <strong>myWebsiteName.github.io</strong></p>
-<h2 id="sauvegarder-le-reste-de-son-code">Sauvegarder le reste de son code</h2>
-<p>Dans le répertoire principe du site hugo (myWebsiteName), pousser les modifications comme lors de l'étape précédente</p>
+<h4 id="confire-nfs-serveur-service">Confire NFS serveur service</h4>
+<p>Sur ce même noeud, nous configurons le server nfs via le shell</p>
+<ol>
+<li>Install package
+<div class="highlight"><pre><span></span><code>apt install nfs-kernel-server
+</code></pre></div></li>
+<li>Edit /etc/exports
+<div class="highlight"><pre><span></span><code>/Storage        192.168.1.XXX(rw,no_root_squash,sync,no_subtree_check)
+/Storage        192.168.1.XXX(rw,no_root_squash,sync,no_subtree_check)
+</code></pre></div></li>
+<li>Edit /etc/hosts.deny
+<div class="highlight"><pre><span></span><code>portmap:ALL
+nfsd:ALL
+mountd:ALL
+statd: ALL
+lockd: ALL
+rquotad: ALL
+rpcbind: ALL
+</code></pre></div></li>
+<li>Edit /etc/hosts.allow
+<div class="highlight"><pre><span></span><code>portmap: <span class="m">192</span>.168.1.XXXX
+lockd: <span class="m">192</span>.168.1.XXXX
+nfsd: <span class="m">192</span>.168.1.XXXX
+mountd: <span class="m">192</span>.168.1.XXXX
+rquotad: <span class="m">192</span>.168.1.XXXX
+statd: <span class="m">192</span>.168.1.XXXX
+rpcbind: <span class="m">192</span>.168.1.XXXX
+
+portmap: <span class="m">192</span>.168.1.XXXX
+lockd: <span class="m">192</span>.168.1.XXXX
+nfsd: <span class="m">192</span>.168.1.XXXX
+mountd: <span class="m">192</span>.168.1.XXXX
+rquotad: <span class="m">192</span>.168.1.XXXX
+statd: <span class="m">192</span>.168.1.XXXX
+rpcbind: <span class="m">192</span>.168.1.XXXX
+</code></pre></div></li>
+<li>Reload export config
+<div class="highlight"><pre><span></span><code>exportfs -a
+</code></pre></div></li>
+<li>Restart nfs sevice
+<div class="highlight"><pre><span></span><code>service nfs-kernel-server restart
+</code></pre></div></li>
+</ol>
+<h4 id="confire-nfs-client-service">Confire NFS client service</h4>
+<p>Sur les autres noeud de notre cluster proxmox, on configure nfs client via le shell</p>
+<ol>
+<li>Install package 
+<div class="highlight"><pre><span></span><code>apt install nfs-common
+</code></pre></div></li>
+<li>Create directory (mount target)
+<div class="highlight"><pre><span></span><code>mkdir /Storage
+</code></pre></div></li>
+<li>Edit fstab and add at the bottom (avec l'IP du noeud où l'on a configuré le server NFS)
+<div class="highlight"><pre><span></span><code><span class="m">192</span>.168.1.XXX:/Storage  /Storage  nfs4 defaults,_netdev  <span class="m">0</span> <span class="m">0</span>
+</code></pre></div></li>
+<li>mount nfs storage
+<div class="highlight"><pre><span></span><code>mount -a
+</code></pre></div></li>
+</ol>
+<h4 id="create-proxmox-cluster-directory">Create proxmox cluster directory</h4>
+<p>proxmox dashboard &gt; datacenter &gt; Storage &gt; add &gt; directory</p>
+<table>
+<thead>
+<tr>
+<th>Champ</th>
+<th>valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>nom que l'on souhaite donnée au stockage</td>
+</tr>
+<tr>
+<td>Directory</td>
+<td>/<strong>Storage</strong></td>
+</tr>
+<tr>
+<td>Content</td>
+<td>selection tout ce que vous souhaitez</td>
+</tr>
+<tr>
+<td>Shared</td>
+<td>check</td>
+</tr>
+<tr>
+<td>Enable</td>
+<td>check</td>
+</tr>
+</tbody>
+</table>
 
   <hr>
 <div class="md-source-file">
@@ -843,7 +992,7 @@ Après environ 2 minutes (temps de déploiement github variable et consultable v
       
         <br>
         Créé:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 27, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2022</span>
       
     
   </small>
@@ -868,7 +1017,7 @@ Après environ 2 minutes (temps de déploiement github variable et consultable v
     <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
       
         
-        <a href="../../Gitlab/config/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Config" rel="prev">
+        <a href="../../VMWare/start_stop_vm_api_vmware/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Start/Stop VM via Api Vmware" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -877,20 +1026,20 @@ Après environ 2 minutes (temps de déploiement github variable et consultable v
               <span class="md-footer__direction">
                 Précédent
               </span>
-              Config
+              Start/Stop VM via Api Vmware
             </div>
           </div>
         </a>
       
       
         
-        <a href="../mkdocs/" class="md-footer__link md-footer__link--next" aria-label="Suivant: mkdocs" rel="next">
+        <a href="../LXC_pihole/" class="md-footer__link md-footer__link--next" aria-label="Suivant: PiHole" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              mkdocs
+              PiHole
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -919,10 +1068,10 @@ Après environ 2 minutes (temps de déploiement github variable et consultable v
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
     
   </body>
