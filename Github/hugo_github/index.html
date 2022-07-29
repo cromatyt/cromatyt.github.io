@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#prerequis" class="md-skip">
+        <a href="#deployer-un-site-gohugo-via-github-page" class="md-skip">
           Aller au contenu
         </a>
       
@@ -467,6 +467,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Virtualisation/Proxmox/prox_packer/" class="md-nav__link">
+        Packer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Virtualisation/Proxmox/LXC_pihole/" class="md-nav__link">
         PiHole
       </a>
@@ -657,9 +671,96 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          goHugo
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         goHugo
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequis" class="md-nav__link">
+    Prérequis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creer-2-repo-github" class="md-nav__link">
+    Créer 2 repo github
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recuperer-nos-repos-en-local" class="md-nav__link">
+    Récupérer nos repos en local
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creer-un-site-hugo" class="md-nav__link">
+    Créer un site Hugo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theme-hugo" class="md-nav__link">
+    Theme hugo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-submodule" class="md-nav__link">
+    Git submodule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generer-les-fichiers-statiques-hugo" class="md-nav__link">
+    Générer les fichiers statiques Hugo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployer-son-site" class="md-nav__link">
+    Deployer son site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sauvegarder-le-reste-de-son-code" class="md-nav__link">
+    Sauvegarder le reste de son code
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -743,6 +844,77 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequis" class="md-nav__link">
+    Prérequis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creer-2-repo-github" class="md-nav__link">
+    Créer 2 repo github
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recuperer-nos-repos-en-local" class="md-nav__link">
+    Récupérer nos repos en local
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creer-un-site-hugo" class="md-nav__link">
+    Créer un site Hugo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theme-hugo" class="md-nav__link">
+    Theme hugo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-submodule" class="md-nav__link">
+    Git submodule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generer-les-fichiers-statiques-hugo" class="md-nav__link">
+    Générer les fichiers statiques Hugo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployer-son-site" class="md-nav__link">
+    Deployer son site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sauvegarder-le-reste-de-son-code" class="md-nav__link">
+    Sauvegarder le reste de son code
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -780,33 +952,35 @@
 
 
 
-<h1 id="prerequis">Prérequis</h1>
+<h1 id="deployer-un-site-gohugo-via-github-page">Déployer un site goHugo via Github page</h1>
+<h2 id="prerequis">Prérequis</h2>
 <ol>
-<li>Avoir un compte Github<blockquote>
-<p><a href="https://github.com/join">Création de compte github</a></p>
-</blockquote>
-</li>
-<li>Installer goHugo sur votre machine locale<blockquote>
-<p><a href="https://gohugo.io/getting-started/installing/">Installation Hugo</a></p>
-</blockquote>
-</li>
+<li>Avoir un compte Github</li>
 </ol>
-<h1 id="mise-en-place">Mise en place</h1>
+<div class="admonition note">
+<p><a href="https://github.com/join">Création de compte github</a></p>
+</div>
+<ol>
+<li>Installer goHugo sur votre machine locale</li>
+</ol>
+<div class="admonition note">
+<p><a href="https://gohugo.io/getting-started/installing/">Installation Hugo</a></p>
+</div>
 <h2 id="creer-2-repo-github">Créer 2 repo github</h2>
 <ol>
 <li>Stocker le code hugo (repo privé ou publique)</li>
-<li>Héberger les fichiers statiques (repo publique uniquement)
-{{&lt; alert warning &gt;}}
-Le nom du repo qui hébergera le site devra être sous la forme: <strong>myWebsiteName.github.io</strong> qui correspondra par la suite à l'url d'accès à votre site
-{{&lt; /alert &gt;}}</li>
+<li>Héberger les fichiers statiques (repo publique uniquement)</li>
 </ol>
+<div class="admonition warning">
+<p>Le nom du repo qui hébergera le site devra être sous la forme: <strong>myWebsiteName.github.io</strong> qui correspondra par la suite à l'url d'accès à votre site</p>
+</div>
 <h2 id="recuperer-nos-repos-en-local">Récupérer nos repos en local</h2>
 <div class="highlight"><pre><span></span><code>git clone git@github.com:YourAccountName/YourRepoName.git
 git clone git@github.com:YourAccountName/myWebsiteName.github.io.git
 </code></pre></div>
-<blockquote>
+<div class="admonition note">
 <p>vous pouvez aussi les récupérer via https mais les commandes <code>git push [...]</code> vous demanderont un token.</p>
-</blockquote>
+</div>
 <h2 id="creer-un-site-hugo">Créer un site Hugo</h2>
 <p>Dans votre repo contenant le code (YourRepoName.git)
 <div class="highlight"><pre><span></span><code>hugo new site myWebsiteName

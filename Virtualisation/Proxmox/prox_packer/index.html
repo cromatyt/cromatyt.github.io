@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://cromatyt.github.io/Virtualisation/Proxmox/prox_NFS/">
+        <link rel="canonical" href="https://cromatyt.github.io/Virtualisation/Proxmox/prox_packer/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
-        <title>Proxmox NFS - MkPersonalDocs</title>
+        <title>Proxmox packer - MkPersonalDocs</title>
       
     
     
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#proxmox-nfs" class="md-skip">
+        <a href="#proxmox-vm-with-packer" class="md-skip">
           Aller au contenu
         </a>
       
@@ -145,7 +145,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Proxmox NFS
+              Proxmox packer
             
           </span>
         </div>
@@ -455,6 +455,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../prox_NFS/" class="md-nav__link">
+        NFS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -467,12 +481,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          NFS
+          Packer
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        NFS
+        Packer
       </a>
       
         
@@ -491,36 +505,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#context" class="md-nav__link">
-    Context
+  <a href="#requirements" class="md-nav__link">
+    Requirements
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mise-ne-place-zfs" class="md-nav__link">
-    Mise ne place ZFS
+  <a href="#folder-structure" class="md-nav__link">
+    Folder structure
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#confire-nfs-serveur-service" class="md-nav__link">
-    Confire NFS serveur service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#confire-nfs-client-service" class="md-nav__link">
-    Confire NFS client service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-proxmox-cluster-directory" class="md-nav__link">
-    Create proxmox cluster directory
+  <a href="#foler-content" class="md-nav__link">
+    Foler content
   </a>
   
 </li>
@@ -529,20 +529,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../prox_packer/" class="md-nav__link">
-        Packer
-      </a>
     </li>
   
 
@@ -823,36 +809,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#context" class="md-nav__link">
-    Context
+  <a href="#requirements" class="md-nav__link">
+    Requirements
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mise-ne-place-zfs" class="md-nav__link">
-    Mise ne place ZFS
+  <a href="#folder-structure" class="md-nav__link">
+    Folder structure
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#confire-nfs-serveur-service" class="md-nav__link">
-    Confire NFS serveur service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#confire-nfs-client-service" class="md-nav__link">
-    Confire NFS client service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-proxmox-cluster-directory" class="md-nav__link">
-    Create proxmox cluster directory
+  <a href="#foler-content" class="md-nav__link">
+    Foler content
   </a>
   
 </li>
@@ -887,8 +859,8 @@
       
     
       
-        <a href="../../../tags/#nfs" class="md-tag">
-          NFS
+        <a href="../../../tags/#packer" class="md-tag">
+          packer
         </a>
       
     
@@ -896,106 +868,214 @@
 
 
 
-<h1 id="proxmox-nfs">Proxmox NFS</h1>
-<h2 id="context">Context</h2>
-<p>Dans un cluster de X nodes, 1 seul de ces nodes comporte un datastore</p>
-<h2 id="mise-ne-place-zfs">Mise ne place ZFS</h2>
-<p>Sur le noeud hebergeant le datastore, nous créons un raid ZFS via proxmox
-Dashboard &gt; node_name &gt; Disks &gt; ZFS</p>
+<h1 id="proxmox-vm-with-packer">Proxmox VM with packer</h1>
 <div class="admonition note">
-<p>Ici notre ZFS sera nommé <strong>Storage</strong></p>
+<p>packer can use json or hcl2, in this doc we will use json</p>
 </div>
-<h2 id="confire-nfs-serveur-service">Confire NFS serveur service</h2>
-<p>Sur ce même noeud, nous configurons le server nfs via le shell</p>
+<h2 id="requirements">Requirements</h2>
 <ol>
-<li>Install package
-<div class="highlight"><pre><span></span><code>apt install nfs-kernel-server
+<li>Packer / python (venv ?) / ansible (pip install ansible)</li>
+<li>Open firewall port on your packer device: <code>firewall-cmd --zone=public --add-port=8000-9000/tcp --permanent</code> then <code>firewall-cmd --reload</code></li>
+<li>Generate proxmox api (id/token)</li>
+<li>Run packer (here from python venv)
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> venv/bin/activate
+<span class="nb">cd</span> packer/json
+packer build packer.json
 </code></pre></div></li>
-<li>Edit /etc/exports
-<div class="highlight"><pre><span></span><code>/Storage        192.168.1.XXX(rw,no_root_squash,sync,no_subtree_check)
-/Storage        192.168.1.XXX(rw,no_root_squash,sync,no_subtree_check)
-</code></pre></div></li>
-<li>Edit /etc/hosts.deny
-<div class="highlight"><pre><span></span><code>portmap:ALL
-nfsd:ALL
-mountd:ALL
-statd: ALL
-lockd: ALL
-rquotad: ALL
-rpcbind: ALL
-</code></pre></div></li>
-<li>Edit /etc/hosts.allow
-<div class="highlight"><pre><span></span><code>portmap: <span class="m">192</span>.168.1.XXXX
-lockd: <span class="m">192</span>.168.1.XXXX
-nfsd: <span class="m">192</span>.168.1.XXXX
-mountd: <span class="m">192</span>.168.1.XXXX
-rquotad: <span class="m">192</span>.168.1.XXXX
-statd: <span class="m">192</span>.168.1.XXXX
-rpcbind: <span class="m">192</span>.168.1.XXXX
+</ol>
+<div class="admonition danger">
+<p>Use vault in your packer.json is way more secure than plain text (for all of your variable + ssh_username and ssh_password) like this example</p>
+</div>
+<h2 id="folder-structure">Folder structure</h2>
+<div class="highlight"><pre><span></span><code><span class="p">|</span>- json
+<span class="p">|</span>   <span class="p">|</span>- http
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>- rocky.cfg
+<span class="p">|</span>   <span class="p">|</span>- packer.json
+<span class="p">|</span>   <span class="p">|</span>- playbook.yml
+</code></pre></div>
+<h2 id="foler-content">Foler content</h2>
+<ol>
+<li>
+<p>rocky.cfg
+<div class="highlight"><pre><span></span><code><span class="c1">#version=RHEL8</span>
+<span class="c1">## Use graphical install</span>
+<span class="c1">##graphical</span>
 
-portmap: <span class="m">192</span>.168.1.XXXX
-lockd: <span class="m">192</span>.168.1.XXXX
-nfsd: <span class="m">192</span>.168.1.XXXX
-mountd: <span class="m">192</span>.168.1.XXXX
-rquotad: <span class="m">192</span>.168.1.XXXX
-statd: <span class="m">192</span>.168.1.XXXX
-rpcbind: <span class="m">192</span>.168.1.XXXX
-</code></pre></div></li>
-<li>Reload export config
-<div class="highlight"><pre><span></span><code>exportfs -a
-</code></pre></div></li>
-<li>Restart nfs sevice
-<div class="highlight"><pre><span></span><code>service nfs-kernel-server restart
+repo --name<span class="o">=</span><span class="s2">&quot;AppStream&quot;</span> --baseurl<span class="o">=</span>file:///run/install/sources/mount-0000-cdrom/AppStream
+
+<span class="c1"># Use text install</span>
+text
+
+%packages
+@^minimal-environment
+kexec-tools
+
+%end
+
+<span class="c1"># Keyboard layouts</span>
+keyboard --xlayouts<span class="o">=</span><span class="s1">&#39;fr (oss)&#39;</span>
+<span class="c1"># System language</span>
+lang fr_FR.UTF-8
+
+<span class="c1"># Network information</span>
+network  --bootproto<span class="o">=</span>static --device<span class="o">=</span>ens18 --gateway<span class="o">=</span><span class="m">192</span>.168.1.XXX --ip<span class="o">=</span><span class="m">192</span>.168.1.XXX --nameserver<span class="o">=</span><span class="m">192</span>.168.1.XXX --netmask<span class="o">=</span><span class="m">255</span>.255.255.0 --onboot<span class="o">=</span>on --noipv6 --activate
+
+<span class="c1"># Use CDROM installation media</span>
+cdrom
+
+<span class="c1"># Run the Setup Agent on first boot</span>
+<span class="c1">##firstboot --enable</span>
+firstboot --disabled
+
+<span class="c1"># add</span>
+eula --agreed
+
+ignoredisk --only-use<span class="o">=</span>sda
+
+<span class="c1"># Disk partitionning information</span>
+<span class="c1">##part /boot --fstype=&quot;xfs&quot; --ondisk=sda --size=512</span>
+<span class="c1">##part pv.01 --fstype=&quot;lvmpv&quot; --ondisk=sda --grow</span>
+<span class="c1">##volgroup vg_root --pesize=4096 pv.01</span>
+<span class="c1">##logvol /home --fstype=&quot;xfs&quot; --size=5120 --name=lv_home --vgname=vg_root</span>
+<span class="c1">##logvol /var --fstype=&quot;xfs&quot; --size=10240 --name=lv_var --vgname=vg_root</span>
+<span class="c1">##logvol / --fstype=&quot;xfs&quot; --size=10240 --name=lv_root --vgname=vg_root</span>
+<span class="c1">##logvol swap --fstype=&quot;swap&quot; --size=4092 --name=lv_swap --vgname=vg_root</span>
+autopart
+
+<span class="c1"># Partition clearing information</span>
+clearpart --all
+<span class="c1">##clearpart --none --initlabel</span>
+
+<span class="c1"># System timezone</span>
+timezone Europe/Paris --isUtc --nontp
+
+<span class="c1"># System services</span>
+selinux --permissive
+firewall --enabled
+services --enabled<span class="o">=</span><span class="s2">&quot;NetworkManager,sshd&quot;</span>
+
+<span class="c1"># Root password</span>
+<span class="c1"># rootpw --plaintext mypassword</span>
+<span class="c1"># can be find in a exist linux system (/etc/shadow)</span>
+<span class="c1"># can be generated, here with pythn3 =&gt;</span>
+<span class="c1"># &gt;&gt;&gt; import crypt</span>
+<span class="c1"># &gt;&gt;&gt; crypt.crypt(&quot;password&quot;, crypt.mksalt())</span>
+rootpw --iscrypted <span class="nv">$6$375</span>H8BSW9k1HCCpB<span class="nv">$UmTXO6fNMKsc3zYIBq</span>/R4fuFWi7zlAdLI4dvwqoCK8V4rL.THm4tFWHq/A/C8zXjiXUtqiPYAQDlcnvPgvCWI/
+
+%addon com_redhat_kdump --disable
+
+reboot
+
+<span class="c1"># Manage Ansible access</span>
+<span class="c1">##groupadd -g 1001 ansible</span>
+<span class="c1">##useradd -m -g 1001 -u 1001 ansible</span>
+<span class="c1">##mkdir /home/ansible/.ssh</span>
+<span class="c1">##echo -e &quot;&lt;---- PAST YOUR PUBKEY HERE ----&gt;&quot; &gt;  /home/ansible/.ssh/authorized_keys</span>
+<span class="c1">##chown -R ansible:ansible /home/ansible/.ssh</span>
+<span class="c1">##chmod 700 /home/ansible/.ssh</span>
+<span class="c1">##chmod 600 /home/ansible/.ssh/authorized_keys</span>
+<span class="c1">##echo &quot;ansible ALL=(ALL:ALL) NOPASSWD:ALL&quot; &gt; /etc/sudoers.d/ansible</span>
+<span class="c1">##chmod 440 /etc/sudoers.d/ansible</span>
+
+%end
+</code></pre></div></p>
+</li>
+<li>
+<p>packer.json
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;variables&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;proxmox_node&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;master&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;proxmox_api_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://192.168.1.XX:8006/api2/json&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;proxmox_api_token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USER@pam!XXXX&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;proxmox_api_token_secret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;XXX-XXX-XXXX-XXXX-XXXX&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;rocky_iso&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StorageMount:iso/rocky-linux_8.6.iso&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;builders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;proxmox&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;proxmox_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{user `proxmox_api_url`}}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;insecure_skip_tls_verify&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{user `proxmox_api_token_id`}}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{user `proxmox_api_token_secret`}}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{user `proxmox_node`}}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;vm_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;453&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;vm_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test-rocky&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;qemu_agent&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ssh_host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;192.168.1.XX&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;network_adapters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;virtio&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;bridge&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vmbr0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;firewall&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;false&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;disks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;disk_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10G&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;scsi&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;storage_pool&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;local-zfs&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;storage_pool_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zfspool&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;cpu_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;host&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;cores&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;sockets&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;memory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1024&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;iso_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{user `rocky_iso`}}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;unmount_iso&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;scsi_controller&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;virtio-scsi-pci&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;http_directory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;boot_wait&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10s&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;boot_command&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;&lt;up&gt;&lt;tab&gt; text ip=dhcp nameserver=192.168.1.254 inst.ks=http://{{.HTTPIP}}:{{.HTTPPort}}/rocky.cfg&lt;enter&gt;&lt;wait&gt;&lt;enter&gt;&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ssh_username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ssh_timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15m&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ssh_password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;password&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;provisioners&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;shell-local&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;inline&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;echo toto&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ansible&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;extra_arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;-v&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;playbook_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./playbook.yml&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+</li>
+<li>playbook.yml
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span><span class="w"></span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span><span class="w"></span>
+<span class="w">  </span><span class="nt">pre_tasks</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upgrade system before build</span><span class="w"></span>
+<span class="w">      </span><span class="nt">dnf</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;*&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install epel release</span><span class="w"></span>
+<span class="w">      </span><span class="nt">dnf</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">epel-release</span><span class="w"></span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install common package</span><span class="w"></span>
+<span class="w">      </span><span class="nt">dnf</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<span class="w">      </span><span class="nt">with_items</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vim</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yum-utils</span><span class="w"></span>
 </code></pre></div></li>
 </ol>
-<h2 id="confire-nfs-client-service">Confire NFS client service</h2>
-<p>Sur les autres noeud de notre cluster proxmox, on configure nfs client via le shell</p>
-<ol>
-<li>Install package 
-<div class="highlight"><pre><span></span><code>apt install nfs-common
-</code></pre></div></li>
-<li>Create directory (mount target)
-<div class="highlight"><pre><span></span><code>mkdir /Storage
-</code></pre></div></li>
-<li>Edit fstab and add at the bottom (avec l'IP du noeud où l'on a configuré le server NFS)
-<div class="highlight"><pre><span></span><code><span class="m">192</span>.168.1.XXX:/Storage  /Storage  nfs4 defaults,_netdev  <span class="m">0</span> <span class="m">0</span>
-</code></pre></div></li>
-<li>mount nfs storage
-<div class="highlight"><pre><span></span><code>mount -a
-</code></pre></div></li>
-</ol>
-<h2 id="create-proxmox-cluster-directory">Create proxmox cluster directory</h2>
-<p>proxmox dashboard &gt; datacenter &gt; Storage &gt; add &gt; directory</p>
-<table>
-<thead>
-<tr>
-<th>Champ</th>
-<th>valeur</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ID</td>
-<td>nom que l'on souhaite donnée au stockage</td>
-</tr>
-<tr>
-<td>Directory</td>
-<td>/<strong>Storage</strong></td>
-</tr>
-<tr>
-<td>Content</td>
-<td>selection tout ce que vous souhaitez</td>
-</tr>
-<tr>
-<td>Shared</td>
-<td>check</td>
-</tr>
-<tr>
-<td>Enable</td>
-<td>check</td>
-</tr>
-</tbody>
-</table>
 
   <hr>
 <div class="md-source-file">
@@ -1031,7 +1111,7 @@ rpcbind: <span class="m">192</span>.168.1.XXXX
     <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
       
         
-        <a href="../../VMWare/start_stop_vm_api_vmware/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Start/Stop VM via Api Vmware" rel="prev">
+        <a href="../prox_NFS/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: NFS" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1040,20 +1120,20 @@ rpcbind: <span class="m">192</span>.168.1.XXXX
               <span class="md-footer__direction">
                 Précédent
               </span>
-              Start/Stop VM via Api Vmware
+              NFS
             </div>
           </div>
         </a>
       
       
         
-        <a href="../prox_packer/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Packer" rel="next">
+        <a href="../LXC_pihole/" class="md-footer__link md-footer__link--next" aria-label="Suivant: PiHole" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              Packer
+              PiHole
             </div>
           </div>
           <div class="md-footer__button md-icon">

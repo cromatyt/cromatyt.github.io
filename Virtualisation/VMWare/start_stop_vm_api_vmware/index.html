@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#presentation" class="md-skip">
+        <a href="#startstop-vm-via-api-vmware" class="md-skip">
           Aller au contenu
         </a>
       
@@ -540,6 +540,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Proxmox/prox_packer/" class="md-nav__link">
+        Packer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Proxmox/LXC_pihole/" class="md-nav__link">
         PiHole
       </a>
@@ -876,12 +890,12 @@
 
 
 
-<h1 id="presentation">Présentation</h1>
+<h1 id="startstop-vm-via-api-vmware">Start/Stop VM via Api Vmware</h1>
 <p>Dans l'optique d'optimiser les coups dans l'IT(Finops), on peut être amené à mettre en place un arrêt de l'environnement de qualifications les soirs et weekend par exemple.</p>
-<p>Afin de pouvoir vérifier directement la prise en compte de cette partie, on passera par l'affectation d'un tag spécifique pour l'ensemble des VM que je souhaites intégrer à ce système. Ils seront alors directement visible dans l'interface graphique de vmware.</p>
-<blockquote>
+<p>Afin de pouvoir vérifier plus facilement la prise en compte de cette partie, on passera par l'affectation d'un tag spécifique pour l'ensemble des VM que l'on souhaite intégrer à ce système. Ils seront alors directement visible dans l'interface graphique de vmware.</p>
+<div class="admonition note">
 <p>On partira du postula que l'ensemble des scripts comporte des variables user/password</p>
-</blockquote>
+</div>
 <div class="admonition warning">
 <p>Dans les morceaux de scripts ci-après, l'option curl <strong>k</strong> est présente car mon serveur VMware ne dispose pas de certificat valide</p>
 </div>
@@ -946,9 +960,9 @@
   curl -skX POST -H <span class="s2">&quot;vmware-api-session-id: </span><span class="nv">$id_session</span><span class="s2">&quot;</span> -H <span class="s1">&#39;Content-Type: application/json&#39;</span> -d <span class="s1">&#39;{&quot;object_id&quot;: { &quot;id&quot;: &quot;&#39;</span><span class="nv">$vm_id</span><span class="s1">&#39;&quot;, &quot;type&quot;: &quot;VirtualMachine&quot;} }&#39;</span> https://<span class="nv">$vcenter</span>/rest/com/vmware/cis/tagging/tag-association/id:<span class="o">{</span><span class="nv">$tag_id</span><span class="o">}</span>?~action<span class="o">=</span>attach
 <span class="k">done</span>
 </code></pre></div>
-<blockquote>
-<p>pour retirer le tag d'une ou plusieurs VM, remplacer simplement <strong>attach</strong> par <strong>detach</strong> dans le script au dessus (dernier appel curl) et relancer le</p>
-</blockquote>
+<div class="admonition note">
+<p>Pour retirer le tag d'une ou plusieurs VM, remplacer simplement <strong>attach</strong> par <strong>detach</strong> dans le script au dessus (dernier appel curl) et relancer le</p>
+</div>
 <h2 id="liste-des-vm-avec-le-nouveau-tag">Liste des VM avec le nouveau tag</h2>
 <div class="highlight"><pre><span></span><code><span class="c1">## URL de votre Vcenter</span>
 <span class="nv">vcenter</span><span class="o">=</span><span class="s1">&#39;XXXXX.XXXX.XX&#39;</span>
@@ -1002,9 +1016,9 @@
 <span class="k">done</span>
 </code></pre></div>
 <p>Une fois créé et testé, ce script peux être mis dans une crontab ou systemd-timer</p>
-<blockquote>
+<div class="admonition note">
 <p>Plus de détails <a href="https://developer.vmware.com/apis/vsphere-automation/latest/">developer.vmware.com</a></p>
-</blockquote>
+</div>
 
   <hr>
 <div class="md-source-file">

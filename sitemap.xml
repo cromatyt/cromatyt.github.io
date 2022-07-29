@@ -51,6 +51,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://cromatyt.github.io/Virtualisation/Proxmox/prox_packer/</loc>
+         <lastmod>2022-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://cromatyt.github.io/Virtualisation/VMWare/start_stop_vm_api_vmware/</loc>
          <lastmod>2022-07-29</lastmod>
          <changefreq>daily</changefreq>

@@ -467,6 +467,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Virtualisation/Proxmox/prox_packer/" class="md-nav__link">
+        Packer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Virtualisation/Proxmox/LXC_pihole/" class="md-nav__link">
         PiHole
       </a>
@@ -869,7 +883,7 @@
 
 
 <h1 id="gitlab-config">Gitlab config</h1>
-<h4 id="install">Install</h4>
+<h2 id="install">Install</h2>
 <div class="highlight"><pre><span></span><code>yum -y install curl vim policycoreutils policycoreutils policycoreutils openssh-server perl postfix
 <span class="c1"># Enable OpenSSH server daemon if not enabled: sudo systemctl status sshd</span>
 systemctl <span class="nb">enable</span> sshd
@@ -884,7 +898,7 @@ curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rp
 <span class="nv">EXTERNAL_URL</span><span class="o">=</span><span class="s2">&quot;https://192.168.1.XXX&quot;</span> yum install -y gitlab-ce
 cat /etc/gitlab/initial_root_password
 </code></pre></div>
-<h4 id="users">Users</h4>
+<h2 id="users">Users</h2>
 <ol>
 <li>Use cli
 <div class="highlight"><pre><span></span><code>gitlab-rails console -e production
@@ -902,7 +916,7 @@ or
 <div class="highlight"><pre><span></span><code>user.disable_two_factor!
 </code></pre></div></li>
 </ol>
-<h4 id="tips">Tips</h4>
+<h2 id="tips">Tips</h2>
 <blockquote>
 <p>/etc/gitlab/gitlab.rb</p>
 </blockquote>
@@ -927,11 +941,11 @@ or
 </code></pre></div></p>
 </li>
 </ol>
-<h4 id="reload-conf">Reload conf</h4>
+<h2 id="reload-conf">Reload conf</h2>
 <div class="highlight"><pre><span></span><code>gitlab-ctl reconfigure
 gitlab-ctl restart
 </code></pre></div>
-<h4 id="what-next">What next ?</h4>
+<h2 id="what-next">What next ?</h2>
 <p><a href="https://docs.gitlab.com/ee/install/next_steps.html">Secure gitlab</a></p>
 
   <hr>
