@@ -376,7 +376,7 @@
   
     <li class="md-nav__item">
       <a href="../network/" class="md-nav__link">
-        Netowork
+        Network
       </a>
     </li>
   
@@ -835,10 +835,10 @@
 <h1 id="linux-disk">Linux disk</h1>
 <h2 id="add-partition-to-linux">Add partition to linux</h2>
 <ol>
-<li>Find your partition
-<div class="highlight"><pre><span></span><code>fdisk -l
-</code></pre></div></li>
+<li>Find your partition</li>
 </ol>
+<div class="highlight"><pre><span></span><code>fdisk -l
+</code></pre></div>
 <div class="admonition note">
 <p>here my partition is <strong>/dev/sdb</strong></p>
 </div>
@@ -854,26 +854,32 @@
 <li>List the partitions on the disk: p (sdb1 must appear)</li>
 <li>Save the changes: w</li>
 <li>Create directory (here: <strong>/data</strong>)</li>
-<li>Create filesystem
-<div class="highlight"><pre><span></span><code>mkfs -t ext4 -L /data /dev/sdb1
-</code></pre></div></li>
-<li>Find partion UUID
-<div class="highlight"><pre><span></span><code>blkid /dev/sdb1
-</code></pre></div></li>
-<li>Add at the bottom of /etc/fstab
-<div class="highlight"><pre><span></span><code>UUID=e8eaa446-6b15-4a5e-8ba8-796a334ebcca /data ext4    defaults        0 0
-</code></pre></div></li>
-<li>Mount filesystem
-<div class="highlight"><pre><span></span><code>mount -a
-</code></pre></div></li>
+<li>Create filesystem</li>
 </ol>
+<div class="highlight"><pre><span></span><code>mkfs -t ext4 -L /data /dev/sdb1
+</code></pre></div>
+<ol>
+<li>Find partion UUID</li>
+</ol>
+<div class="highlight"><pre><span></span><code>blkid /dev/sdb1
+</code></pre></div>
+<ol>
+<li>Add at the bottom of /etc/fstab</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nv">UUID</span><span class="o">=</span>e8eaa446-6b15-4a5e-8ba8-796a334ebcca /data ext4    defaults        <span class="m">0</span> <span class="m">0</span>
+</code></pre></div>
+<ol>
+<li>Mount filesystem</li>
+</ol>
+<div class="highlight"><pre><span></span><code>mount -a
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 31, 2022</span>
       
         <br>
         Créé:
@@ -918,13 +924,13 @@
       
       
         
-        <a href="../network/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Netowork" rel="next">
+        <a href="../network/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Network" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              Netowork
+              Network
             </div>
           </div>
           <div class="md-footer__button md-icon">

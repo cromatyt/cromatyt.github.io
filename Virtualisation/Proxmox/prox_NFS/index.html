@@ -333,7 +333,7 @@
   
     <li class="md-nav__item">
       <a href="../../../Linux/network/" class="md-nav__link">
-        Netowork
+        Network
       </a>
     </li>
   
@@ -908,14 +908,19 @@ Dashboard &gt; node_name &gt; Disks &gt; ZFS</p>
 <h2 id="confire-nfs-serveur-service">Confire NFS serveur service</h2>
 <p>Sur ce même noeud, nous configurons le server nfs via le shell</p>
 <ol>
-<li>Install package
+<li>Install package</li>
+</ol>
 <div class="highlight"><pre><span></span><code>apt install nfs-kernel-server
-</code></pre></div></li>
-<li>Edit /etc/exports
+</code></pre></div>
+<ol>
+<li>Edit /etc/exports</li>
+</ol>
 <div class="highlight"><pre><span></span><code>/Storage        192.168.1.XXX(rw,no_root_squash,sync,no_subtree_check)
 /Storage        192.168.1.XXX(rw,no_root_squash,sync,no_subtree_check)
-</code></pre></div></li>
-<li>Edit /etc/hosts.deny
+</code></pre></div>
+<ol>
+<li>Edit /etc/hosts.deny</li>
+</ol>
 <div class="highlight"><pre><span></span><code>portmap:ALL
 nfsd:ALL
 mountd:ALL
@@ -923,8 +928,10 @@ statd: ALL
 lockd: ALL
 rquotad: ALL
 rpcbind: ALL
-</code></pre></div></li>
-<li>Edit /etc/hosts.allow
+</code></pre></div>
+<ol>
+<li>Edit /etc/hosts.allow</li>
+</ol>
 <div class="highlight"><pre><span></span><code>portmap: <span class="m">192</span>.168.1.XXXX
 lockd: <span class="m">192</span>.168.1.XXXX
 nfsd: <span class="m">192</span>.168.1.XXXX
@@ -940,30 +947,39 @@ mountd: <span class="m">192</span>.168.1.XXXX
 rquotad: <span class="m">192</span>.168.1.XXXX
 statd: <span class="m">192</span>.168.1.XXXX
 rpcbind: <span class="m">192</span>.168.1.XXXX
-</code></pre></div></li>
-<li>Reload export config
-<div class="highlight"><pre><span></span><code>exportfs -a
-</code></pre></div></li>
-<li>Restart nfs sevice
-<div class="highlight"><pre><span></span><code>service nfs-kernel-server restart
-</code></pre></div></li>
+</code></pre></div>
+<ol>
+<li>Reload export config</li>
 </ol>
+<div class="highlight"><pre><span></span><code>exportfs -a
+</code></pre></div>
+<ol>
+<li>Restart nfs sevice</li>
+</ol>
+<div class="highlight"><pre><span></span><code>service nfs-kernel-server restart
+</code></pre></div>
 <h2 id="confire-nfs-client-service">Confire NFS client service</h2>
 <p>Sur les autres noeud de notre cluster proxmox, on configure nfs client via le shell</p>
 <ol>
-<li>Install package 
-<div class="highlight"><pre><span></span><code>apt install nfs-common
-</code></pre></div></li>
-<li>Create directory (mount target)
-<div class="highlight"><pre><span></span><code>mkdir /Storage
-</code></pre></div></li>
-<li>Edit fstab and add at the bottom (avec l'IP du noeud où l'on a configuré le server NFS)
-<div class="highlight"><pre><span></span><code><span class="m">192</span>.168.1.XXX:/Storage  /Storage  nfs4 defaults,_netdev  <span class="m">0</span> <span class="m">0</span>
-</code></pre></div></li>
-<li>mount nfs storage
-<div class="highlight"><pre><span></span><code>mount -a
-</code></pre></div></li>
+<li>Install package</li>
 </ol>
+<div class="highlight"><pre><span></span><code>apt install nfs-common
+</code></pre></div>
+<ol>
+<li>Create directory (mount target)</li>
+</ol>
+<div class="highlight"><pre><span></span><code>mkdir /Storage
+</code></pre></div>
+<ol>
+<li>Edit fstab and add at the bottom (avec l'IP du noeud où l'on a configuré le server NFS)</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="m">192</span>.168.1.XXX:/Storage  /Storage  nfs4 defaults,_netdev  <span class="m">0</span> <span class="m">0</span>
+</code></pre></div>
+<ol>
+<li>mount nfs storage</li>
+</ol>
+<div class="highlight"><pre><span></span><code>mount -a
+</code></pre></div>
 <h2 id="create-proxmox-cluster-directory">Create proxmox cluster directory</h2>
 <p>proxmox dashboard &gt; datacenter &gt; Storage &gt; add &gt; directory</p>
 <table>
@@ -1002,7 +1018,7 @@ rpcbind: <span class="m">192</span>.168.1.XXXX
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 31, 2022</span>
       
         <br>
         Créé:

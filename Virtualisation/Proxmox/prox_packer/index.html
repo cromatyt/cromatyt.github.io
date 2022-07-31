@@ -333,7 +333,7 @@
   
     <li class="md-nav__item">
       <a href="../../../Linux/network/" class="md-nav__link">
-        Netowork
+        Network
       </a>
     </li>
   
@@ -877,12 +877,12 @@
 <li>Packer / python (venv ?) / ansible (pip install ansible)</li>
 <li>Open firewall port on your packer device: <code>firewall-cmd --zone=public --add-port=8000-9000/tcp --permanent</code> then <code>firewall-cmd --reload</code></li>
 <li>Generate proxmox api (id/token)</li>
-<li>Run packer (here from python venv)
+<li>Run packer (here from python venv)</li>
+</ol>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> venv/bin/activate
 <span class="nb">cd</span> packer/json
 packer build packer.json
-</code></pre></div></li>
-</ol>
+</code></pre></div>
 <div class="admonition danger">
 <p>Use vault in your packer.json is way more secure than plain text (for all of your variable + ssh_username and ssh_password) like this example</p>
 </div>
@@ -895,8 +895,8 @@ packer build packer.json
 </code></pre></div>
 <h2 id="foler-content">Foler content</h2>
 <ol>
-<li>
-<p>rocky.cfg
+<li>rocky.cfg</li>
+</ol>
 <div class="highlight"><pre><span></span><code><span class="c1">#version=RHEL8</span>
 <span class="c1">## Use graphical install</span>
 <span class="c1">##graphical</span>
@@ -978,10 +978,10 @@ reboot
 <span class="c1">##chmod 440 /etc/sudoers.d/ansible</span>
 
 %end
-</code></pre></div></p>
-</li>
-<li>
-<p>packer.json
+</code></pre></div>
+<ol>
+<li>packer.json</li>
+</ol>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;variables&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;proxmox_node&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;master&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1051,9 +1051,10 @@ reboot
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">]</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
-</li>
-<li>playbook.yml
+</code></pre></div>
+<ol>
+<li>playbook.yml</li>
+</ol>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span><span class="w"></span>
@@ -1074,15 +1075,14 @@ reboot
 <span class="w">      </span><span class="nt">with_items</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vim</span><span class="w"></span>
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yum-utils</span><span class="w"></span>
-</code></pre></div></li>
-</ol>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 31, 2022</span>
       
         <br>
         Créé:

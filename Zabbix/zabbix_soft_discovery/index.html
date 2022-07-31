@@ -333,7 +333,7 @@
   
     <li class="md-nav__item">
       <a href="../../Linux/network/" class="md-nav__link">
-        Netowork
+        Network
       </a>
     </li>
   
@@ -927,10 +927,12 @@ On lui donne:</p>
 </code></pre></div>
 <p>On passe donc par un nouveau preprocessing afin de récupérer uniquement les valeurs qui correspondent au nombre de messages dans nos queues rabbitmq (dans notre exemple, les valeurs sont respectivement 1,2 et 3)</p>
 <p><a href="../../img/zabbix/autodiscovery_zabbix/item_prototypes_preprocessing_bad.png"><img alt="item prototypes preprocessing" src="../../img/zabbix/autodiscovery_zabbix/item_prototypes_preprocessing_bad.png" title="Item prototypes preprocessing" /></a></p>
-<p>Une fois notre configuration sauvegardé, nos items (ici 3) vont se créer automatiquement avec les noms:
-- Message in queue: queue_name1
-- Message in queue: queue_name2
-- Message in queue: queue_name3</p>
+<p>Une fois notre configuration sauvegardé, nos items (ici 3) vont se créer automatiquement avec les noms:</p>
+<ul>
+<li>Message in queue: queue_name1</li>
+<li>Message in queue: queue_name2</li>
+<li>Message in queue: queue_name3</li>
+</ul>
 <p>Bien que cela soit parfaitement fonctionnelle, il faut bien comprendre que nous effectuons 4 appels au prometheus toutes les minutes.</p>
 <p>Un appel pour récupérer:</p>
 <ol>
@@ -974,7 +976,7 @@ Vis à vis du premier exemple que j'ai nommé "classique", nous n'effectuons plu
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 31, 2022</span>
       
         <br>
         Créé:

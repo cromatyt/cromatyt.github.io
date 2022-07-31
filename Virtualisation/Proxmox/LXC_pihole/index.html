@@ -333,7 +333,7 @@
   
     <li class="md-nav__item">
       <a href="../../../Linux/network/" class="md-nav__link">
-        Netowork
+        Network
       </a>
     </li>
   
@@ -554,8 +554,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-your-tz" class="md-nav__link">
-    Set your tz
+  <a href="#set-your-timezone" class="md-nav__link">
+    Set your timezone
   </a>
   
 </li>
@@ -879,8 +879,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-your-tz" class="md-nav__link">
-    Set your tz
+  <a href="#set-your-timezone" class="md-nav__link">
+    Set your timezone
   </a>
   
 </li>
@@ -933,7 +933,7 @@
 
 
 <h1 id="pihole">PiHole</h1>
-<p>Create an ubuntu LXC on proxmox</p>
+<p>Setup Pihole from ubuntu LXC on proxmox</p>
 <h2 id="minimal-requirements">Minimal requirements</h2>
 <ol>
 <li>4 Go DD</li>
@@ -962,7 +962,7 @@ sudo chmod <span class="m">600</span> ~/.ssh/authorized_keys
 </code></pre></div>
 <p>Then print the content of your local file ~/.ssh/id_ed25519.pub to ~/.ssh/authorized_keys on your LXC</p>
 <h2 id="configure-ssh-on-lxc">Configure SSH on LXC</h2>
-<p>Basique conf of /etc/ssh/sshd_config (replace port and allowusers): </p>
+<p>Basique conf of /etc/ssh/sshd_config (replace port and allowusers):</p>
 <div class="highlight"><pre><span></span><code>Include /etc/ssh/sshd_config.d/*.conf
 
 Port XXXX
@@ -971,6 +971,7 @@ PermitRootLogin no
 PasswordAuthentication no
 PermitEmptyPasswords no
 
+<span class="c1"># Optionnal</span>
 AllowUsers USER@X.X.X.*
 
 KbdInteractiveAuthentication no
@@ -980,26 +981,28 @@ PrintMotd no
 AcceptEnv LANG LC_*
 Subsystem       sftp    /usr/lib/openssh/sftp-server
 </code></pre></div>
-<p>Restart your SSH service
+<p>Restart your SSH service</p>
 <div class="highlight"><pre><span></span><code>service ssh restart
-</code></pre></div></p>
-<p>Now you can connect your LXC with your piholeadmin user and your ssh key
-<div class="highlight"><pre><span></span><code>ssh -i ~.ssh/id_ed25519 -p <span class="o">{</span>SSH pihoel port<span class="o">}</span> piholeadmin@<span class="o">{</span>pihole IP<span class="o">}</span>
-</code></pre></div></p>
-<h2 id="set-your-tz">Set your tz</h2>
+</code></pre></div>
+<p>Now you can connect your LXC with your piholeadmin user and your ssh key</p>
+<div class="highlight"><pre><span></span><code>ssh -i ~.ssh/id_ed25519 -p <span class="o">{</span>SSH pihole port<span class="o">}</span> piholeadmin@<span class="o">{</span>pihole IP<span class="o">}</span>
+</code></pre></div>
+<h2 id="set-your-timezone">Set your timezone</h2>
 <div class="highlight"><pre><span></span><code>timedatectl set-timezone Europe/Paris
 </code></pre></div>
 <h2 id="install-pihole">Install pihole</h2>
 <div class="highlight"><pre><span></span><code>apt install curl -y
 curl -sSL https://install.pi-hole.net <span class="p">|</span> bash
 </code></pre></div>
-<p>Change pihole password
+<p>Change pihole password</p>
 <div class="highlight"><pre><span></span><code>pihole -a -p
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="add-blocklist">ADD blocklist</h2>
-<p>On pi-hole dashboard, go to "Group Management &gt; ADlists" and paste your links (can paste multiple at once)
-- https://firebog.net/
-- https://github.com/StevenBlack/hosts</p>
+<p>On pi-hole dashboard, go to "Group Management &gt; ADlists" and paste your links (can paste multiple at once)</p>
+<ul>
+<li><a href="https://firebog.net/">https://firebog.net/</a></li>
+<li><a href="https://github.com/StevenBlack/hosts">https://github.com/StevenBlack/hosts</a></li>
+</ul>
 <p>Reload your conf in "tools &gt; Update Gravity"</p>
 
   <hr>
@@ -1007,7 +1010,7 @@ curl -sSL https://install.pi-hole.net <span class="p">|</span> bash
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 31, 2022</span>
       
         <br>
         Créé:

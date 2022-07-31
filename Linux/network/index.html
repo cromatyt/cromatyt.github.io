@@ -344,12 +344,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Netowork
+          Network
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Netowork
+        Network
       </a>
       
         
@@ -861,26 +861,24 @@
 
 
 <h1 id="linux-network">Linux network</h1>
-<h4 id="disable-ipv6">Disable IPv6</h4>
+<h2 id="disable-ipv6">Disable IPv6</h2>
 <ol>
-<li>
-<p>Edit /etc/sysctl.conf
-<div class="highlight"><pre><span></span><code>net.ipv6.conf.all.disable_ipv6=1
-net.ipv6.conf.default.disable_ipv6=1
-</code></pre></div></p>
-</li>
-<li>
-<p>Reload sysctl
-<div class="highlight"><pre><span></span><code>sysctl -p
-</code></pre></div></p>
-</li>
+<li>Edit /etc/sysctl.conf</li>
 </ol>
-<h4 id="linux-static-ip">Linux static IP</h4>
+<div class="highlight"><pre><span></span><code>net.ipv6.conf.all.disable_ipv6<span class="o">=</span><span class="m">1</span>
+net.ipv6.conf.default.disable_ipv6<span class="o">=</span><span class="m">1</span>
+</code></pre></div>
+<ol>
+<li>Reload sysctl</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sysctl -p
+</code></pre></div>
+<h2 id="linux-static-ip">Linux static IP</h2>
 <p>Edit /etc/sysconfig/network-scripts/ifcfg-ens18</p>
 <blockquote>
 <p>Change BOOTPROTO value to none</p>
 </blockquote>
-<h4 id="apply-network-change">Apply network change</h4>
+<h2 id="apply-network-change">Apply network change</h2>
 <p>Reboot</p>
 
   <hr>
@@ -888,7 +886,7 @@ net.ipv6.conf.default.disable_ipv6=1
   <small>
     
       Dernière mise à jour:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 31, 2022</span>
       
         <br>
         Créé:
